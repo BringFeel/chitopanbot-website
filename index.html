@@ -70,12 +70,13 @@
 					<div id="main">
 
 							<article id="comandos">
-								<h2 class="major">Comandos del Bot</h2>
+								<h2 class="major">Comandos de Utilidades</h2>
 								<p><li><b>Prefix:</b> +</li></p>
+								<p><li>El color<b style="color:#FF0000";>rojo</b> en un comando significa que solo lo puede usar el dueño del bot</li></p>
 								<table>
 									<thead>
 										<tr>
-											<th>Comandos</th>
+											<th>Comando</th>
 											<th>Descripción</th>
 										</tr>
 									</thead>
@@ -101,15 +102,44 @@
 											<td>Ping del bot</td>
 										</tr>
 										<tr>
-											<td>+debug</td>
-											<td>Canales de voz en los que esta conectado</td>
+											<td>+avatar</td>
+											<td>Muestra el avatar tuyo o del usuario que menciones</td>
 										</tr>
 										<tr>
 											<td>+github</td>
 											<td>Link del repositorio en github</td>
 										</tr>
+										<tr>
+											<td>+filterlist</td>
+											<td>Lista de los filtros activos</td>
+										</tr>
+										<tr>
+											<td>+miembros</td>
+											<td>Miembros totales en el servidor</td>
+										</tr>
+										<tr>
+											<td>+rol</td>
+											<td>Cambia los permisos de un rol</td>
+										</tr>
+										<tr>
+											<td>+rolinfo</td>
+											<td>Link a la lista de los permisos disponibles para usar en el comando +rol</td>
+										</tr>
+										<tr>
+											<td>+serverinfo</td>
+											<td>Información variada del servidor</td>
+										</tr>
+										<tr>
+											<td style="color:#FF0000";>+restart</td>
+											<td>Reinicia el bot</td>
+										</tr>
+										<tr>
+											<td>+support</td>
+											<td>Link de invitación al servidor de soporte</td>
+										</tr>
 										</tbody>
 										</table>
+								                <li><a href="https://chitopanbot.bringfeel.com/#lista-de-permisos">Lista de permisos disponibles para el comando +rol</a></li>
 										<hr />
 										<h2 class="major">Comando de Moderación</h2>
 										<p><li><b>Forma de uso:</b> +ban (Id numérica)</li></p>
@@ -132,7 +162,7 @@
 										<table>
 											<thead>
 												<tr>
-													<th>Comandos</th>
+													<th>Comando</th>
 													<th>Descripción</th>
 												</tr>
 											</thead>
@@ -178,20 +208,108 @@
 													<td>Canción reproduciendose actualmente</td>
 												</tr>
 												<tr>
-													<td>+clear-queue</td>
-													<td>Borra la lista de canciones</td>
+													<td>+autoplay</td>
+													<td>Activa o desactiva la reproducción automatica</td>
 												</tr>
 												<tr>
-													<td>+search</td>
-													<td>Busca el nombre de una canción y muesta 19 resultados</td>
+													<td>+join</td>
+													<td>Conecta el bot al canal de voz</td>
 												</tr>
 												<tr>
-													<td>+w-filters</td>
-													<td>Filtros activos e inactivos</td>
+													<td>+leave</td>
+													<td>Desconecta el bot del canal de voz</td>
 												</tr>
 												<tr>
-													<td>+shuffle</td>
-													<td>Reproducción aleatoria de la lista</td>
+													<td>+loopqueue</td>
+													<td>Repite la lista</td>
+												</tr>
+												<tr>
+													<td>+lyrics</td>
+													<td>Busca la letra de la canción</td>
+												</tr>
+												<tr>
+													<td>+previous</td>
+													<td>Vuelve a la canción anterior de la lista</td>
+												</tr>
+												<tr>
+													<td>+skipto</td>
+													<td>Salta a una canción específica</td>
+												</tr>
+												</tbody>
+												</table>
+												<hr />
+								<h2 class="major">Comandos de Roleplay</h2>
+										<table>
+											<thead>
+												<tr>
+													<th>Comando</th>
+													<th>Descripción</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>+abrazo</td>
+													<td>Abraza a alguien</td>
+												</tr>
+												<tr>
+													<td>+amor</td>
+													<td>Porcentaje de tu suerte en el amor</td>
+												</tr>
+												<tr>
+													<td>+beso</td>
+													<td>Besa a alguien</td>
+												</tr>
+												<tr>
+													<td>+bisexual</td>
+													<td>Porcentaje de tu bisexualidad</td>
+												</tr>
+												<tr>
+													<td>+caricia</td>
+													<td>Acaricia a alguien</td>
+												</tr>
+												<tr>
+													<td>+gay</td>
+													<td>Porcentaje de tu homosexualidad</td>
+												</tr>
+												<tr>
+													<td>+lamida</td>
+													<td>Lame a alguien</td>
+												</tr>
+												<tr>
+													<td>+otaku</td>
+													<td>Que tan otaku eres</td>
+												</tr>
+												<tr>
+													<td>+sopapo</td>
+													<td>Dale una cachetada a alguien</td>
+												</tr>
+												<tr>
+													<td>+trapo</td>
+													<td>Que tan travesti eres</td>
+												</tr>
+												</tbody>
+												</table>
+												<hr />
+								<h2 class="major">Comandos de Juegos</h2>
+										<table>
+											<thead>
+												<tr>
+													<th>Comando</th>
+													<th>Descripción</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>+mcsrv</td>
+													<td>Info de un servidor de minecraft</td>
+												</tr>
+												<tr>
+													<td>+mcsrvapi</td>
+													<td>Apis usadas para el comando +mcsrv</td>
+												</tr>
+												<tr>
+													<td>+csgo</td>
+													<td>Estadisticas de tu perfil de csgo</td>
 												</tr>
 												</tbody>
 												</table>
@@ -201,14 +319,14 @@
 										<table>
 											<thead>
 												<tr>
-													<th>Filtros</th>
+													<th>Filtro</th>
 													<th>Descripción</th>
 												</tr>
 											</thead>
 											<tbody>
 												<tr>
-													<td>8D</td>
-													<td>Efecto 8D</td>
+													<td>3D</td>
+													<td>Efecto 3D</td>
 												</tr>
 												<tr>
 													<td>Gate</td>
@@ -219,16 +337,8 @@
 													<td>Sonido robotico</td>
 												</tr>
 												<tr>
-													<td>treble</td>
-													<td>Un poco de eco</td>
-												</tr>
-												<tr>
 													<td>tremolo</td>
 													<td>Sonido parpadeante</td>
-												</tr>
-                                                <tr>
-													<td>vibrato</td>
-													<td>Sonido vivrante (borracho/robotico)</td>
 												</tr>
 												<tr>
 													<td>reverse</td>
@@ -239,7 +349,7 @@
 													<td>Música sin voces para cantar</td>
 												</tr>
 												<tr>
-													<td>flanger</td>
+													<td>flager</td>
 													<td>Sonido variando (flashero)</td>
 												</tr>
 												<tr>
@@ -247,32 +357,36 @@
 													<td>Voz/sonido general con efectos</td>
 												</tr>
 												<tr>
-													<td>pulsator</td>
-													<td>Sonido de lado a lado rapido</td>
-												</tr>
-												<tr>
-													<td>subboost</td>
-													<td>Red separadora de frecuencias de paso alto</td>
-												</tr>
-												<tr>
 													<td>bassboost</td>
 													<td>Aumento de graves</td>
-												</tr>
-												<tr>
-													<td>vaporwave</td>
-													<td>Sonido realentizado (slowed)</td>
 												</tr>
 												<tr>
 													<td>nightcore</td>
 													<td>Sonido acelerado</td>
 												</tr>
 												<tr>
-													<td>normalizer</td>
-													<td>Elimina los filtros actuales (Beta, posiblemente no funcional)</td>
+													<td>reset</td>
+													<td>Elimina los filtros actuales</td>
 												</tr>
 												<tr>
-													<td>surrounding</td>
+													<td>surround</td>
 													<td>Sonido surround</td>
+												</tr>
+												<tr>
+													<td>errape</td>
+													<td>Sonido saturado</td>
+												</tr>
+												<tr>
+													<td>earwax</td>
+													<td>Sonido tapado y con eco</td>
+												</tr>
+												<tr>
+													<td>echo</td>
+													<td>Sonido repetico en eco</td>
+												</tr>
+												<tr>
+													<td>haas</td>
+													<td>Efecto de precedencia (cuando un sonido es seguido por otro con un tiempo de retraso de aproximadamente 40 ms o menos (por debajo del humano umbral de eco), los dos se perciben como un solo sonido)</td>
 												</tr>
 												</tbody>
 												</table>
@@ -280,7 +394,6 @@
 												<li><a href="mailto:soporte@bringfeel.com">soporte@bringfeel.com</a></li>
 												<li><a href="https://discord.bringfeel.com/">discord.bringfeel.com</a></li>
 												<li><a href="https://discord.com/users/489613817165381669">BringFeel#8805</a></li>
-												<li><a href="https://chitopanbot.bringfeel.com/#lista-de-permisos">Lista de permisos disponibles para el comando +rol</a></li>
 				
 							</article>
 		<article id="lista-de-permisos">
@@ -289,7 +402,7 @@
 										<table>
 											<thead>
 												<tr>
-													<th>Permisos</th>
+													<th>Permiso</th>
 													<th>Descripción</th>
 												</tr>
 											</thead>
