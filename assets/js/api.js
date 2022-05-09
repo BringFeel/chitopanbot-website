@@ -12,7 +12,7 @@ $(document).ready(function(){
         $('#uptimes').text(dJson.uptimesegundos);
         $('#cpus').text(Math.floor(dJson.cpus));
         $('#cpu').text(dJson.cpu);
-		$('#estado').text(dJson.estado);
-		$('#estadoapi').text(dJson.eapi);
+	$('#estado').text(dJson.estado);
+	$('#estadoapi').text(dJson.eapi);
     });
 });
