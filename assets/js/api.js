@@ -6,10 +6,7 @@ $(document).ready(function(){
         $('#RamUsada').text(Math.floor(dJson.ramusada / 1024 / 1000));
         $('#RamLibre').text(Math.floor(4096 - (dJson.ramusada / 1024 / 1000)));
         $('#RamTotal').text(dJson.ramtotal);
-        $('#uptimed').text(dJson.uptimedias);
-        $('#uptimeh').text(dJson.uptimehoras);
-        $('#uptimem').text(dJson.uptimeminutos);
-        $('#uptimes').text(dJson.uptimesegundos);
+        $('#uptime').text(dJson.uptime);
         $('#cpus').text(Math.floor(dJson.cpus));
         $('#cpu').text(dJson.cpu);
 	$('#estado').text(dJson.estado);
