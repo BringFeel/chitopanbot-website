@@ -45,50 +45,103 @@
 			</header>
 
 			<!-- Main -->
-					<div class="container">
-							<p><span id="estadoapi" style="color:#FF0000;">Enviaste demasiadas solicitudes a la api, espera un poco.</span><br>
-							<span id="estadoapi" style="color:#FF0000;">Este apartado funciona únicamente mediante el protocolo http por el momento (debido a problemas con la api)</span></p>
-
+			<div id="main" class="wrapper style1">
+				<div class="container">
+					<header class="major">
+						<h10 class="vaporwave">ESTAD.</h10>
+					</header>
 						<!-- Text -->
 							<section>
 								<div class="table-wrapper">
+									<p><span id="estadoapi" style="color:#FF0000;">Enviaste demasiadas solicitudes a la api (También es posible que el bot esté offline), espera un poco.</span><br>
+										<span id="estadoapi" style="color:#ff4646;">Este apartado funciona únicamente mediante el protocolo http por el momento (debido a problemas con la api)</span></p>
 									<table class="alt">
 										<tbody>
 											<tr>
 												<td>Estado</td>
 												<td><span id="estado" style="color:#00ff3c";><b style="color:#FF0000";>Offline</b></span></td>
 											</tr>
+										</tbody>
+									</table>
+									<table class="alt">					
+											<h2 class="major" style="text-align: center;">Bot</h2>
+										<tbody>
 											<tr>
 												<td>Servidores totales</td>
-												<td><span id="servidores">0</span></td>
+												<td><span id="servidores">---</span></td>
 											</tr>
 											<tr>
-												<td>Ram Usada</td>
-												<td><span id="RamUsada">0</span>Mb</td>
+												<td>Usuarios totales</td>
+												<td><span id="usuarios">---</span></td>
 											</tr>
 											<tr>
-												<td>Ram Libre</td>
-												<td><span id="RamLibre">0</span>Mb</td>
+												<td>Servidores reproduciendo música</td>
+												<td><span id="smusic">---</span></td>
 											</tr>
 											<tr>
-												<td>Ram Total</td>
-												<td><span id="RamTotal">0</span>Mb</td>
+												<td>Ping</td>
+												<td><span id="ping">---</span></td>
 											</tr>
 											<tr>
 												<td>Uptime</td>
 												<td><span id="uptime">---</span></td>
 											</tr>
+										</tbody>
+									</table>
+									<table class="alt">
+											<h2 class="major" style="text-align: center;">Hardware</h2>
+										<tbody>
+											<tr>
+												<td>Ram Usada</td>
+												<td><span id="RamUsada">---</span>Mb</td>
+											</tr>
+											<tr>
+												<td>Ram Libre</td>
+												<td><span id="RamLibre">---</span>Mb</td>
+											</tr>
+											<tr>
+												<td>Ram Total</td>
+												<td><span id="RamTotal">---</span>Mb</td>
+											</tr>
+											<tr>
+												<td>Cpu</td>
+												<td><span id="cpu">---</span></td>
+											</tr>
 											<tr>
 												<td>Cpu usada</td>
-												<td><span id="cpus">0</span>%</td>
+												<td><span id="cpus">---</span>%</td>
+											</tr>
+											<tr>
+												<td>Velocidad de Cpu</td>
+												<td><span id="cpuv">---</span></td>
 											</tr>
 										</tbody>
 									</table>
+									<table class="alt">
+										<h2 class="major" style="text-align: center;">Sistema</h2>
+									<tbody>
+										<tr>
+											<td>Sistema Operativo</td>
+											<td><span id="so">---</span></td>
+										</tr>
+										<tr>
+											<td>Arquitectura</td>
+											<td><span id="arq">---</span></td>
+										</tr>
+										<tr>
+											<td>Discord.js</td>
+											<td><span id="djs">---</span></td>
+										</tr>
+										<tr>
+											<td>Node.js</td>
+											<td><span id="njs">---</span></td>
+										</tr>
+									</tbody>
+								</table>
 								</div>
 							</section>
-</div>
-				</div>
-
+                      </div>
+			   </div>
 		</div>
 		<div class="animation-wrapper">
 			<div class="particle particle-1"></div>
