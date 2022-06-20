@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $.get('http://usa3.starnode.us:27826',function(data){
+    $.get('http://si.bringfeel.com:27826',function(data){
         var dJson = JSON.parse(data);
         $('#servidores').text(dJson.servidores);
         $('#ramusadaapi').text(dJson.ramusada);
@@ -9,7 +9,15 @@ $(document).ready(function(){
         $('#uptime').text(dJson.uptime);
         $('#cpus').text(Math.floor(dJson.cpus));
         $('#cpu').text(dJson.cpu);
-	$('#estado').text(dJson.estado);
-	$('#estadoapi').text(dJson.eapi);
+	    $('#estado').text(dJson.estado);
+	    $('#estadoapi').text(dJson.eapi);
+		$('#ping').text(dJson.ping);
+		$('#cpuv').text(dJson.cpuv);
+		$('#so').text(dJson.so);
+		$('#arq').text(dJson.arq);
+		$('#djs').text(dJson.djs);
+		$('#njs').text(dJson.njs);
+		$('#smusic').text(dJson.smusic);
+		$('#usuarios').text(dJson.usuarios);
     });
 });
