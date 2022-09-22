@@ -5,12 +5,12 @@ function fetchData() {
 
 		$('#servidores').text(data.data[0].servers);
         $('#RamUsada').text(`${Math.floor(data.data[0].memactive / 1048576)}Mb`);
-        $('#RamLibre').text(`${Math.floor(4096 - (data.data[0].memactive / 1048576))}Mb`);
-        $('#RamTotal').text('4096Mb');
+        $('#RamLibre').text(`${Math.floor(1024 - (data.data[0].memactive / 1048576))}Mb`);
+        $('#RamTotal').text('1024Mb');
         $('#RedUsada').text(`${Math.floor(data.data[0].bandwidth / 1048576)}Mb`);
         $('#usuarios').text(data.data[0].users);
-        $('#njs').text('v17.9.1');
-        $('#djs').text('v14.3.0');
+        $('#njs').text('v18.2.0');
+        $('#djs').text('v14.4.0');
 
         if (data.error = false) {
         $('#estado').text('Offline');
