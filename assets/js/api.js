@@ -9,7 +9,7 @@ function fetchData() {
         $('#RamTotal').text('1024Mb');
         $('#RedUsada').text(`${Math.floor(data.data[0].bandwidth / 1048576)}Mb`);
         $('#usuarios').text(data.data[0].users);
-        $('#njs').text('v18.2.0');
+        $('#njs').text('v19.1.0');
         $('#djs').text('v14.4.0');
 
         if (data.error = false) {
