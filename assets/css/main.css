@@ -4009,15 +4009,6 @@ input, select, textarea {
 				font-size: 12pt;
 			}
 
-		/* Button */
-
-			input[type="submit"],
-			input[type="reset"],
-			input[type="button"],
-			.button {
-				/*padding: 0; Disabled*/
-			}
-
 		/* Spotlight */
 
 			.spotlight .image.main {
@@ -4109,4 +4100,41 @@ input, select, textarea {
 			  ::-webkit-scrollbar-thumb:hover {
 				background: rgb(164,0,0);
 				background: linear-gradient(159deg, rgba(164,0,0,1) 0%, rgba(102,9,9,1) 100%);
+			  }
+
+			  .NEW {
+				--bg-size: 400%;
+				--color-one: hsl(0, 90%, 55%);
+				--color-two: hsl(128, 90%, 55%);
+				--color-three: hsl(229, 95%, 55%);
+				font-family: sans-serif;
+				background: linear-gradient(
+					90deg,
+					var(--color-one),
+					var(--color-two),
+					var(--color-three),
+					var(--color-one)
+				  )
+				  0 0 / var(--bg-size) 100%;
+				color: transparent;
+				background-clip: text;
+				padding: 6px;
+				border: aquamarine;
+				border-style: solid;
+				border-radius: 8px;
+				padding: 2px 15px 2px 15px;
+				font-weight: bold;
+				width: 200px;
+				border-width: 2px
+			  }
+			  
+			  @media (prefers-reduced-motion: no-preference) {
+				.NEW {
+				  animation: move-bg 8s linear infinite;
+				}
+				@keyframes move-bg {
+				  to {
+					background-position: var(--bg-size) 0;
+				  }
+				}
 			  }
