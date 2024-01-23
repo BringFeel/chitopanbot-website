@@ -30,6 +30,13 @@
 			font-size: 100px;
 		}
 
+		.grafica {
+            background-color: rgba(0, 0, 0, 0.219);
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+        }
+
 		@media screen and (max-width: 736px) { 
                 #estad {
                 	font-size: 40px;
@@ -66,57 +73,18 @@
 						<!-- Text -->
 							<section>
 								<div class="table-wrapper">
-									<p><span id="estadoapi" style="color:#FF0000;">La API que se usaba para este apartado se ha apagado permanentemente. Se está buscando un alternativa.</span></p>
-									<table class="alt">
-										<tbody>
-											<tr>
-												<td>Estado</td>
-												<td><span id="estado" style="color:#00ff3c";><b style="color:#FF0000";>Offline</b></span></td>
-											</tr>
-										</tbody>
-									</table>
-									<table class="alt">					
-											<h2 class="major" style="text-align: center;">Bot</h2>
-										<tbody>
-											<tr>
-												<td>Servidores totales</td>
-												<td><span id="servidores">---</span></td>
-											</tr>
-											<tr>
-												<td>Usuarios totales</td>
-												<td><span id="usuarios">---</span></td>
-											</tr>
-										</tbody>
-									</table>
-									<table class="alt">
-											<h2 class="major" style="text-align: center;">Sistema</h2>
-										<tbody>
-											<tr>
-												<td>Ram Usada</td>
-												<td><span id="RamUsada">---</span></td>
-											</tr>
-											<tr>
-												<td>Ram Libre</td>
-												<td><span id="RamLibre">---</span></td>
-											</tr>
-											<tr>
-												<td>Ram Total</td>
-												<td><span id="RamTotal">---</span></td>
-											</tr>
-											<tr>
-												<td>Red usada</td>
-												<td><span id="RedUsada">---</span></td>
-											</tr>
-											<tr>
-												<td>Discord.js</td>
-												<td><span id="djs">---</span></td>
-											</tr>
-											<tr>
-												<td>Node.js</td>
-												<td><span id="njs">---</span></td>
-											</tr>
-										</tbody>
-									</table>
+									<h2 class="major" style="text-align: center;">Bot</h2>
+                                        <canvas class="grafica" id="servers">Your browser does not support the canvas element.<br>Tu Navegador no soporta el elemento canvas.</canvas>
+                                        	<hr>
+                                        <canvas class="grafica" id="users"></canvas>
+                                        	<hr>
+                                        <canvas class="grafica" id="discordapi"></canvas>
+                                        	<hr>
+									<h2 class="major" style="text-align: center;">Sistema</h2>
+                                        <canvas class="grafica" id="system"></canvas>
+                                        	<hr>
+                                        <canvas class="grafica" id="bandwidth"></canvas>
+                                        	<hr>
 								</div>
 							</section>
                       </div>
@@ -129,8 +97,8 @@
 			<div class="particle particle-4"></div>
 		  </div>
 		<!-- Scripts -->
-	                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		                <script src="https://chitopanbot.bringfeel.com.ar/assets/js/api.js"></script>
+	            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		        <script src="https://chitopanbot.bringfeel.com.ar/assets/js/api.js"></script>
 				<script src="https://chitopanbot.bringfeel.com.ar/assets/js/jquery.scrolly.min.js"></script>
 				<script src="https://chitopanbot.bringfeel.com.ar/assets/js/jquery.dropotron.min.js"></script>
 				<script src="https://chitopanbot.bringfeel.com.ar/assets/js/jquery.scrollex.min.js"></script>
