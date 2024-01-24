@@ -5,6 +5,7 @@ const system = document.querySelector("#system");
 const bandwidth = document.querySelector("#bandwidth");
 
 const url = 'https://cors.unmutedte.ch/https://disstat-api.tomatenkuchen.com/api/bots/chitopanbot?timezone=America/Buenos_Aires&locale=es-419&start=2023-07-17T0000&dataPoints=90';
+const urlDiscordAPIStatus = `https://cors.unmutedte.ch/https://discordstatus.com/metrics-display/5k2rt9f7pmny/day.json`;
 
 const requestOptions = {
   method: 'GET',
@@ -14,13 +15,28 @@ const requestOptions = {
   },
 };
 
+const requestOptions2 = {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'application/json',
+    'Origin': 'https://discordstatus.com/',
+  },
+};
+
 function fetchData() {
     fetch(url, requestOptions).then(response => {
         return response.json();
     }).then(data => {
 
-    const bytesToMegabytes = bytes => Math.round(bytes / (1024 * 1024)) ;
-    const bytesToGb = bytes => Math.round(bytes / (1024 * 1024 * 1024)) ;
+    const bytesToMegabytes = bytes => Math.round(bytes / (1024 * 1024));
+    const bytesToGb = bytes => Math.round(bytes / (1024 * 1024 * 1024));
+	function formatearNumeroConPuntos(numero) {
+		var numeroCadena = numero.toString();
+
+        var numeroFormateado = numeroCadena.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+        return numeroFormateado;
+    }
 
 const dataset1 = {
     label: data.charts[0].name,
@@ -39,7 +55,7 @@ const dataset2 = {
 };
 
 const dataset3 = {
-    label: data.charts[2].name,
+    label: "ChitoPanBOT to Discord API",
     data: data.charts[2].data,
     borderColor: 'rgba(69, 140, 248, 0.8)',
     fill: false,
@@ -138,6 +154,12 @@ new Chart(servers, {
             text: "Última Actualización: " + new Date(data.lastStats).toLocaleString(navigator.language, {timezone: new Intl.DateTimeFormat().resolvedOptions().timeZone}),
             color: "#ffffffbf"
         },
+		subtitle: {
+			display: true,
+			text: "Server Count: " + DataServers.datasets[0].data[DataServers.datasets[0].data.length - 1],
+            color: "#ffffffbf",
+            position: "bottom"
+		},
         legend: {
             labels: {
                 color: '#ffffffbf'
@@ -171,6 +193,12 @@ new Chart(users, {
             text: "Última Actualización: " + new Date(data.lastStats).toLocaleString(navigator.language, {timezone: new Intl.DateTimeFormat().resolvedOptions().timeZone}),
             color: "#ffffffbf"
         },
+		subtitle: {
+			display: true,
+			text: "User Count: " + formatearNumeroConPuntos(DataUsers.datasets[0].data[DataUsers.datasets[0].data.length - 1]),
+            color: "#ffffffbf",
+            position: "bottom"
+		},
         legend: {
             labels: {
                 color: '#ffffffbf'
@@ -179,7 +207,7 @@ new Chart(users, {
     }
 }
 });
-new Chart(discordapi, {
+var DiscordAPIChart = new Chart(discordapi, {
     type: 'line',
     data: DataDiscordAPI,
     scaleFontColor: "#ffffffbf",
@@ -205,7 +233,7 @@ new Chart(discordapi, {
         title: {
             display: true,
             text: "Última Actualización: " + new Date(data.lastStats).toLocaleString(navigator.language, {timezone: new Intl.DateTimeFormat().resolvedOptions().timeZone}),
-            color: "#ffffffbf"
+            color: "#ffffffbf",
         },
         legend: {
             labels: {
@@ -220,6 +248,7 @@ new Chart(discordapi, {
     }
 }
 });
+
 new Chart(system, {
     type: 'line',
     data: DataSystem,
@@ -245,6 +274,12 @@ new Chart(system, {
             text: "Última Actualización: " + new Date(data.lastStats).toLocaleString(navigator.language, {timezone: new Intl.DateTimeFormat().resolvedOptions().timeZone}),
             color: "#ffffffbf"
         },
+		subtitle: {
+			display: true,
+			text: "RAM Usage: " + DataSystem.datasets[0].data[DataSystem.datasets[0].data.length - 1] + "MB | Total RAM: " + DataSystem.datasets[1].data[DataSystem.datasets[1].data.length - 1] + "MB | CPU Usage: " + DataSystem.datasets[2].data[DataSystem.datasets[2].data.length - 1] + "%",
+            color: "#ffffffbf",
+            position: "bottom"
+		},
         legend: {
             labels: {
                 color: '#ffffffbf'
@@ -287,6 +322,12 @@ new Chart(bandwidth, {
             text: "Última Actualización: " + new Date(data.lastStats).toLocaleString(navigator.language, {timezone: new Intl.DateTimeFormat().resolvedOptions().timeZone}),
             color: "#ffffffbf"
         },
+		subtitle: {
+			display: true,
+			text: "Bandwidth Usage: " + DataBandwidth.datasets[0].data[DataBandwidth.datasets[0].data.length - 1] + "GB",
+            color: "#ffffffbf",
+            position: "bottom"
+		},
         legend: {
             labels: {
                 color: '#ffffffbf'
@@ -300,6 +341,38 @@ new Chart(bandwidth, {
     }
 }
 });
+
+function fetchDataInfo() {
+    fetch("https://discordstatus.com/metrics-display/5k2rt9f7pmny/day.json").then(response => {
+        return response.json();
+    }).then(dataLast => {
+
+	  var first94Values = dataLast.metrics[0].data.slice(0, data.charts[2].data.length).map(item => item.value);
+      var orderedValues = Array.from({ length: first94Values.length }, (_, index) => first94Values[index]);
+
+ var newDataset2 = {
+                label: data.charts[1].name,
+                data: orderedValues,
+                borderColor: 'rgba(255, 99, 132, 1)',
+                fill: false,
+				label: "Official Discord API",
+				suffix: " ms",
+				tension: 0.1
+            }
+
+            var SubtitleChartDSAPI = {
+				display: true,
+				text: "ChitoPanBOT: " + data.charts[2].data[data.charts[2].data.length - 1] + "ms | Official Discord API: " + orderedValues[orderedValues.length - 1] + "ms",
+                color: "#ffffffbf",
+                position: "bottom"
+			}
+            
+            DataDiscordAPI.datasets.push(newDataset2);
+			DiscordAPIChart.options.plugins.subtitle = SubtitleChartDSAPI;
+			DiscordAPIChart.update();
+});
+}
+fetchDataInfo()    
 
 }).catch(error => {
         console.log(error);
