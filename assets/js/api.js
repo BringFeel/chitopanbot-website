@@ -48,7 +48,7 @@ const dataset2 = {
 const dataset3 = {
     label: "ChitoPanBOT to Discord API",
     data: data.charts[2].data,
-    borderColor: 'rgba(69, 140, 248, 0.8)',
+    borderColor: '#6C0F0F',
     fill: false,
     tension: 0.1,
     suffix: ' ms'
@@ -344,7 +344,7 @@ function fetchDataInfo() {
  var newDataset2 = {
                 label: data.charts[1].name,
                 data: orderedValues,
-                borderColor: 'rgba(255, 99, 132, 1)',
+                borderColor: '#5865F2',
                 fill: false,
 				label: "Official Discord API",
 				suffix: " ms",
