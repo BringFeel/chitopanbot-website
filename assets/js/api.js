@@ -14,14 +14,6 @@ const requestOptions = {
   },
 };
 
-const requestOptions2 = {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-    'Origin': 'https://discordstatus.com/',
-  },
-};
-
 function fetchData() {
     fetch(url, requestOptions).then(response => {
         return response.json();
