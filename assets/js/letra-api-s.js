@@ -34,7 +34,7 @@ headers: {
 'Origin': 'https://bringfeel.com.ar',
 },
 };
-function fetchData() {
+async function fetchData() {
 await fetch(url, requestOptions).then(response => {
 	return response.json();
 }).then(data => {
@@ -68,49 +68,10 @@ return ErrorMessage.innerHTML = "Ocurrió algún error desconocido, por favor in
 $("#artista-cancion").text(data.artist + " - " + data.title)
 $('#letra').html(data.lyrics.replace(/\n/g, '<br>'))
 
-const urlInfoLast = `https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=79049ebcaa576f269f938328f424c5f0&artist=${data.artist}&track=${song}&format=json`;
-
-function fetchDataInfo() {
-fetch(urlInfoLast, requestOptions).then(response => {
-	return response.json();
-}).then(dataLast => {
-
-	if (dataLast.error) {
-	return console.log("La Api de Last.fm arrojó el siguiente error: " + dataLast.error)
-	}
-
-ImageElement = document.getElementById("ImageAlbum");
-ImageElement.src = dataLast.track.album.image[2]["#text"]
-tdElement = document.getElementById("LastLink");
-var enlace = document.createElement("a");
-enlace.href = dataLast.track.url;
-enlace.innerHTML = dataLast.track.url;
-enlace.style.borderBottom = "0";
-enlace.target = "_blank";
-tdElement.innerHTML = ""; 
-tdElement.appendChild(enlace);
-console.log(dataLast)
-const nombres = dataLast.track.toptags.tag.map(objeto => objeto.name);
-nombres.sort();
-const nombresOrdenados = nombres.map((nombre) => ` ${nombre}`);
-
-$("#LastArtista").text(dataLast.track.artist.name)
-$("#LastAlbum").text(dataLast.track.album.title)
-$("#LastSong").text(dataLast.track.name)
-$("#LastPublishDate").text(dataLast.track.wiki.published)
-$("#LastTags").text(nombresOrdenados)
-$("#LastDuration").text(convertirMilisegundosATiempo(dataLast.track.duration))
-$("#LastPlayCount").text(formatearNumeroConPuntos(dataLast.track.playcount))
-$("#LastListeners").text(formatearNumeroConPuntos(dataLast.track.listeners))
-
-
 $(".mensajeCarga").remove();
 $(".ViewContent").removeClass("hidden");
-
-});
-}
-
-fetchDataInfo()
+ImageElement = document.getElementById("ImageAlbum");
+ImageElement.src = data.image
 
 });
 }
