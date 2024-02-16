@@ -35,7 +35,7 @@ headers: {
 },
 };
 function fetchData() {
-fetch(url, requestOptions).then(response => {
+await fetch(url, requestOptions).then(response => {
 	return response.json();
 }).then(data => {
 
