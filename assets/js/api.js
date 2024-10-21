@@ -47,7 +47,7 @@ const dataset2 = {
 
 const dataset3 = {
     label: "ChitoPanBOT to Discord API",
-    data: data.charts[2].data,
+    data: data.charts[3].data,
     borderColor: '#6C0F0F',
     fill: false,
     tension: 0.1,
@@ -55,8 +55,8 @@ const dataset3 = {
 };
 
 const dataset4 = {
-    label: data.charts[3].name,
-    data: data.charts[3].data.map(bytesToMegabytes),
+    label: data.charts[4].name,
+    data: data.charts[4].data.map(bytesToMegabytes),
     borderColor: 'rgba(245, 40, 145, 0.8)',
     fill: false,
     tension: 0.1,
@@ -64,8 +64,8 @@ const dataset4 = {
 };
 
 const dataset5 = {
-    label: data.charts[4].name,
-    data: data.charts[4].data.map(bytesToMegabytes),
+    label: data.charts[5].name,
+    data: data.charts[5].data.map(bytesToMegabytes),
     borderColor: 'rgb(255, 0, 255)',
     fill: false,
     tension: 0.1,
@@ -73,8 +73,8 @@ const dataset5 = {
 };
 
 const dataset6 = {
-    label: data.charts[5].name,
-    data: data.charts[5].data,
+    label: data.charts[6].name,
+    data: data.charts[6].data,
     borderColor: 'rgb(0, 255, 255)',
     fill: false,
     tension: 0.1,
@@ -82,14 +82,11 @@ const dataset6 = {
 };
 
 const dataset7 = {
-    label: data.charts[6].name,
-    data: data.charts[6].data.map(bytesToGb),
+    label: data.charts[2].name,
+    data: data.charts[2].data,
     borderColor: "rgb(255, 255, 0)",
-    color: "#FFFFFF",
-    borderWidth: 1,
     fill: false,
-    tension: 0.1,
-    suffix: ' GB'
+    tension: 0.1
 };
 
 const DataServers = {
@@ -112,7 +109,7 @@ const DataSystem = {
     datasets: [dataset4,dataset5,dataset6]
 };
 
-const DataBandwidth = {
+const DataShards = {
     labels: data.charts[6].labels,
     datasets: [dataset7]
     
@@ -286,16 +283,16 @@ new Chart(system, {
 });
 new Chart(bandwidth, {
     type: 'line',
-    data: DataBandwidth,
+    data: DataShards,
     scaleFontColor: "#ffffffbf",
     options: {
     scales:{ 
         yAxes:{ 
             ticks: { 
-                beginAtZero:true,
+                beginAtZero: true,
                 color: '#ffffffbf',
                 callback: function(value) {
-                return value + ' GB';
+                return value;
                 }
             } 
         },
@@ -315,7 +312,7 @@ new Chart(bandwidth, {
         },
 		subtitle: {
 			display: true,
-			text: "Bandwidth Usage: " + DataBandwidth.datasets[0].data[DataBandwidth.datasets[0].data.length - 1] + "GB",
+			text: "Shard Count: " + DataShards.datasets[0].data[DataShards.datasets[0].data.length - 1],
             color: "#ffffffbf",
             position: "bottom"
 		},
@@ -326,7 +323,7 @@ new Chart(bandwidth, {
 },
     tooltip: {
         callbacks: {
-            label: (context) => `${context.dataset.label}: ${context.parsed.y}${context.dataset.suffix}`
+            label: (context) => `${context.dataset.label}: ${context.parsed.y}`
         }
     }
     }
@@ -353,7 +350,7 @@ function fetchDataInfo() {
 
             var SubtitleChartDSAPI = {
 				display: true,
-				text: "ChitoPanBOT: " + data.charts[2].data[data.charts[2].data.length - 1] + "ms | Official Discord API: " + orderedValues[orderedValues.length - 1] + "ms",
+				text: "ChitoPanBOT: " + data.charts[3].data[data.charts[3].data.length - 1] + "ms | Official Discord API: " + orderedValues[orderedValues.length - 1] + "ms",
                 color: "#ffffffbf",
                 position: "bottom"
 			}
