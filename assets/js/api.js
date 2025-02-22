@@ -57,7 +57,7 @@ const dataset2 = { //Users
 
 const dataset3 = { //Api
     label: "ChitoPanBOT to Discord API",
-    data: data.charts.discordAPIPing.data,
+    data: data.charts.discordAPIPing.data.map(value => value === 0 ? null : value),
     borderColor: '#6C0F0F',
     fill: false,
     tension: 0.1,
