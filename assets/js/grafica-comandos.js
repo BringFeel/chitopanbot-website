@@ -78,5 +78,4 @@ new Chart(commands, {
         console.log(error);
     });
 }
-
 fetchData();
