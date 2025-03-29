@@ -4,7 +4,21 @@ const discordapi = document.querySelector("#discordapi");
 const system = document.querySelector("#system");
 const bandwidth = document.querySelector("#bandwidth");
 
-const url = 'https://cors-anywhere.bringfeel.com.ar/https://api.bringfeel.com.ar/chitopanbot/getStatus?startDate=2024-01-16%2013:01:01&dataPoints=50';
+function fechaAtrasada30Dias() {
+  const hoy = new Date();
+  hoy.setDate(hoy.getDate() - 30);
+
+  const año = hoy.getFullYear();
+  const mes = String(hoy.getMonth() + 1).padStart(2, '0');
+  const dia = String(hoy.getDate()).padStart(2, '0');
+  const horas = String(hoy.getHours()).padStart(2, '0');
+  const minutos = String(hoy.getMinutes()).padStart(2, '0');
+  const segundos = String(hoy.getSeconds()).padStart(2, '0');
+
+  return `${año}-${mes}-${dia}T${horas}:${minutos}:${segundos}`;
+}
+
+const url = `https://cors-anywhere.bringfeel.com.ar/https://api.bringfeel.com.ar/chitopanbot/getStatus?startDate=${fechaAtrasada30Dias()}&dataPoints=50`;
 
 const requestOptions = {
   method: 'GET',
